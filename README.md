@@ -13,10 +13,10 @@ Sistema para listar todas as "Vitrines" disponíveis e listar também as vitrine
 
 1. Instalar e ativar Pipenv ([Pypa](https://pypi.org/project/pipenv/))
 
-2. Instalar dependências:
+2. Instalar todas as dependências do Pipenv necessárias para a API rodar:
 
     ```bash
-    pip install -r requirements.txt
+    pipenv install
     ```
 
 3. Instalar o MySQL e criar uma nova `"database"` com o nome do projeto, nesse caso `"vitrines".`

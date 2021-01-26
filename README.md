@@ -31,7 +31,7 @@ Sistema para listar todas as "Vitrines" disponíveis e listar também as vitrine
 
     python manage.py migrate
     
-5. Crie um usuário (Administrador do sistema): Nesse caso o meu Usuário ADM é `"admin"` e Senha ADM é `"123Teste!"`, não esqueça de configurar esse usuário e senha lá em `settings.py`>>`DATABASES`.
+5. Crie um usuário (Administrador do sistema): Nesse caso o meu Usuário ADM é `"teste"` e Senha ADM é `"123Teste!"`, não esqueça de configurar esse usuário e senha lá em `settings.py`>>`DATABASES`.
 
     ```bash
     python manage.py createsuperuser

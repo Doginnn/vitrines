@@ -2,7 +2,7 @@ from django.db import models
 
 
 #Classe que mostra a Vitrine(Pacote)
-class Title(models.Model):
+class Vitrine(models.Model):
     title = models.CharField(max_length=100, verbose_name='Pacotes')
     subtitle = models.CharField(max_length=200, verbose_name='Descrição')
 

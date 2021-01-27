@@ -8,7 +8,9 @@ Sistema para listar todas as "Vitrines" disponíveis e listar também as vitrine
 
 - [Python](https://www.python.org/downloads/) - Versão 3.8
 - [django](http://www.djangoproject.com) - 3.1
-- [python-decouple](https://pypi.org/project/python-decouple/) - 3.4
+- [django-rest-framework](https://pypi.org/project/djangorestframework/) - 3.12
+
+[comment]: <> (- [python-decouple]&#40;https://pypi.org/project/python-decouple/&#41; - 3.4)
 
 ## Instalação:
 

@@ -17,4 +17,9 @@ class Hotel(models.Model):
 class City(models.Model):
     name = models.CharField(max_length=50, verbose_name='Nome da cidade')
     slug = models.CharField(max_length=50, verbose_name='Apelido da cidade')
-    state = models.CharField(max_length=50, verbose_name='Estado')
+    state = models.CharField(max_length=50, verbose_name='Abreviação do estado')
+
+
+class Country(models.Model):
+    name = models.CharField(max_length=50, verbose_name='Nome do País')
+    slug = models.CharField(max_length=50, verbose_name='Apelido do país')

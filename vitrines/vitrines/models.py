@@ -12,3 +12,9 @@ class Hotel(models.Model):
     slug = models.CharField(max_length=100, verbose_name='Apelido do Hotel')
     image = models.URLField(verbose_name='Imagem')
     price = models.IntegerField(verbose_name='Valor R$')
+
+
+class City(models.Model):
+    name = models.CharField(max_length=50, verbose_name='Nome da cidade')
+    slug = models.CharField(max_length=50, verbose_name='Apelido da cidade')
+    state = models.CharField(max_length=50, verbose_name='Estado')

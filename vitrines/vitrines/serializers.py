@@ -1,8 +1,14 @@
 from rest_framework import serializers
-from .models import Hotel
+from vitrines.vitrines.models import Hotel, Item
 
 
-class HoteisSerializer(serializers.ModelSerializer):
+class HotelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Hotel
+        fields = '__all__'
+
+
+class ItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Item
         fields = '__all__'

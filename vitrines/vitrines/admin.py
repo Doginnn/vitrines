@@ -1,6 +1,5 @@
 from django.contrib import admin
-from vitrines.vitrines.models import Hotel
+from vitrines.vitrines.models import Hotel, Item
 
-@admin.register(Hotel)
-class HoteisAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title','subtitle',]
+
+admin.site.register(Hotel, Item)

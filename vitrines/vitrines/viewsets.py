@@ -1,13 +1,13 @@
 from rest_framework import viewsets
-from vitrines.vitrines.models import Hotel, Item
-from vitrines.vitrines.serializers import HotelSerializer, ItemSerializer
+from vitrines.vitrines.models import Title, Hotel
+from vitrines.vitrines.serializers import TitleSerializer, HotelSerializer
+
+
+class TitleViewSet(viewsets.ModelViewSet):
+    queryset = Title.objects.all()
+    serializer_class = TitleSerializer
 
 
 class HotelViewSet(viewsets.ModelViewSet):
     queryset = Hotel.objects.all()
     serializer_class = HotelSerializer
-
-
-class ItemViewSet(viewsets.ModelViewSet):
-    queryset = Item.objects.all()
-    serializer_class = ItemSerializer

@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_nested import routers
-from vitrines.vitrines.viewsets import EventoViewSet, ItemViewSet, CityViewSet
+from vitrines.vitrines.views import EventoViewSet, ItemViewSet, CityViewSet
 
 
 api_router = routers.DefaultRouter()

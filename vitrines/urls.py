@@ -1,21 +1,17 @@
-"""vitrines URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path, include
-from .router import api_router, eventos_router
+from rest_framework_nested import routers
+from vitrines.vitrines.viewsets import EventoViewSet, ItemViewSet, CityViewSet
+
+
+api_router = routers.DefaultRouter()
+api_router.register(r'eventos', EventoViewSet)
+
+eventos_router = routers.NestedDefaultRouter(api_router, r"eventos", lookup="evento")
+eventos_router.register(r"items", ItemViewSet, basename="evento-items")
+
+# citys_router = routers.NestedDefaultRouter(api_router, r"citys", lookup="city")
+# citys_router.register(r"citys", CityViewSet, basename="city-items")
 
 
 urlpatterns = [
@@ -24,3 +20,7 @@ urlpatterns = [
     path('', include(eventos_router.urls)),
     # path('', include(citys_router.urls)),
 ]
+
+# path('/', tem que me retornar o primeiro e segundo pacote criado "id 1 e id 2"),
+# path('/destinos', tem que me retornar o primeiro pacote criado "id 1"),
+# path('/sobre', tem que me retornar uma lista vazia "[]"),

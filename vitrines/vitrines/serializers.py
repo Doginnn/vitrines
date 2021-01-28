@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from vitrines.vitrines.models import Evento, Hotel
+from vitrines.vitrines.models import Evento, Item
 
 
 class EventoSerializer(serializers.ModelSerializer):
@@ -8,7 +8,7 @@ class EventoSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class HotelSerializer(serializers.ModelSerializer):
+class ItemSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Hotel
-        fields = '__all__'
+        model = Item
+        exclude = ['evento']

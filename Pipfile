@@ -12,6 +12,7 @@ decouple = "==0.0.7"
 requests = "*"
 python-decouple = "==3.4"
 djangorestframework = "==3.12.2"
+drf-nested-routers = "==0.92.5"
 
 [requires]
 python_version = "3.8"

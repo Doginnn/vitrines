@@ -1,8 +1,9 @@
 from rest_framework import viewsets
-from vitrines.vitrines.models import Evento, Item
-from vitrines.vitrines.serializers import EventoSerializer, ItemSerializer
+from vitrines.vitrines.models import Evento, Item, City
+from vitrines.vitrines.serializers import EventoSerializer, ItemSerializer, CitySerializer
 
-#Lista todas as vitrines
+
+# Lista todas as vitrines
 class EventoViewSet(viewsets.ModelViewSet):
     queryset = Evento.objects.all()
     serializer_class = EventoSerializer
@@ -13,10 +14,13 @@ class ItemViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return Item.objects.filter(
-            evento = self.kwargs['evento_pk']
+            evento=self.kwargs['evento_pk']
         )
 
 
+class CityViewSet(viewsets.ModelViewSet):
+    serializer_class = CitySerializer
+    queryset = City.objects.all()
 
 # Criar a viewset para retornar a vitrine - CRUD;
 # Criar a viewset para listar toda a vitrine - OK; ('')

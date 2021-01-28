@@ -21,6 +21,6 @@ from .router import api_router, eventos_router
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(api_router.urls)),
-    path('', include(eventos_router.urls))
-    # path('vitrine', include(router.urls, 'vitrine')),
+    path('', include(eventos_router.urls)),
+    # path('', include(citys_router.urls)),
 ]

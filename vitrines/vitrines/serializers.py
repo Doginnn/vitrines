@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from vitrines.vitrines.models import Evento, Item
+from vitrines.vitrines.models import Evento, Item, City
 
 
 class EventoSerializer(serializers.ModelSerializer):
@@ -11,4 +11,10 @@ class EventoSerializer(serializers.ModelSerializer):
 class ItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item
-        exclude = ['evento']
+        fields = '__all__'
+
+
+class CitySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = City
+        fields = '__all__'

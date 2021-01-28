@@ -1,10 +1,10 @@
 from rest_framework import serializers
-from vitrines.vitrines.models import Vitrine, Hotel
+from vitrines.vitrines.models import Evento, Hotel
 
 
-class VitrineSerializer(serializers.ModelSerializer):
+class EventoSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Vitrine
+        model = Evento
         fields = '__all__'
 
 

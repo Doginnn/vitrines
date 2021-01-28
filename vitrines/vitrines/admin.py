@@ -1,5 +1,5 @@
 from django.contrib import admin
-from vitrines.vitrines.models import Vitrine, Hotel
+from vitrines.vitrines.models import *
 
 
-admin.site.register(Vitrine, Hotel)
+admin.site.register(Evento, Hotel, City, Country, Category)

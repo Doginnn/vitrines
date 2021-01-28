@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .router import router
+from .vitrines import viewsets
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
+    # path('vitrine', include(router.urls, 'vitrine')),
 ]

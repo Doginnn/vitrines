@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_nested import routers
-from vitrines.vitrines.views import EventoViewSet, ItemViewSet, CityViewSet, CountryViewSet, CategoryViewSet
+from vitrines.vitrines.views import *
 
 # End Points from API
 api_router = routers.DefaultRouter()
@@ -12,6 +12,7 @@ api_router.register(r'category', CategoryViewSet)
 
 # End Points solicitados pela SBTur
 api_router.register(r'vitrines', ItemViewSet)
+api_router.register(r'destinos', DestinoViewSet)
 
 # End Points from REST_FRAMEWORK_NESTED
 eventos_router = routers.NestedDefaultRouter(api_router, r"eventos", lookup='evento')
@@ -22,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(api_router.urls)),
     path('vitrines/', include(api_router.urls)),
+    path('destinos/', include(api_router.urls)),
     path('eventos', include(api_router.urls)),
     path('city/', include(api_router.urls)),
     path('country/', include(api_router.urls)),

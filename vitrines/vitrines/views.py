@@ -1,26 +1,36 @@
 from rest_framework import viewsets
-from vitrines.vitrines.models import Evento, Item, City
-from vitrines.vitrines.serializers import EventoSerializer, ItemSerializer, CitySerializer
+from vitrines.vitrines.serializers import *
 
 
 # Lista todas as vitrines
 class EventoViewSet(viewsets.ModelViewSet):
-    queryset = Evento.objects.all()
     serializer_class = EventoSerializer
+    queryset = Evento.objects.all()
 
 
 class ItemViewSet(viewsets.ModelViewSet):
     serializer_class = ItemSerializer
+    queryset = Item.objects.all()
 
-    def get_queryset(self):
-        return Item.objects.filter(
-            evento=self.kwargs['evento_pk']
-        )
+    # def get_queryset(self):
+    #     return Item.objects.filter(
+    #         evento=self.kwargs['evento_pk']
+    #     )
 
 
 class CityViewSet(viewsets.ModelViewSet):
     serializer_class = CitySerializer
     queryset = City.objects.all()
+
+
+class CountryViewSet(viewsets.ModelViewSet):
+    serializer_class = CountrySerializer
+    queryset = Country.objects.all()
+
+
+class CategoryViewSet(viewsets.ModelViewSet):
+    serializer_class = CategorySerializer
+    queryset = Category.objects.all()
 
 # Criar a viewset para retornar a vitrine - CRUD;
 # Criar a viewset para listar toda a vitrine - OK; ('')

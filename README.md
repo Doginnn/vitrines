@@ -9,10 +9,15 @@ Sistema para listar todas as "Vitrines" disponíveis e listar também as vitrine
 - [Python](https://www.python.org/downloads/) - Versão 3.8
 - [django](http://www.djangoproject.com) - 3.1
 - [django-rest-framework](https://pypi.org/project/djangorestframework/) - 3.12
+- [drf-nested-router](https://github.com/alanjds/drf-nested-routers)
 
 [comment]: <> (- [python-decouple]&#40;https://pypi.org/project/python-decouple/&#41; - 3.4)
 
 ## Instalação:
+0. Clone o projeto
+    ```bash
+    git clone https://github.com/Doginnn/vitrines.git
+    ```
 
 1. Instalar e ativar Pipenv ([Pypa](https://pypi.org/project/pipenv/))
 

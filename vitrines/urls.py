@@ -13,7 +13,6 @@ api_router.register(r'category', CategoryViewSet)
 # End Points solicitados pela SBTur
 api_router.register(r'vitrines', ItemViewSet)
 
-
 # End Points from REST_FRAMEWORK_NESTED
 eventos_router = routers.NestedDefaultRouter(api_router, r"eventos", lookup='evento')
 eventos_router.register(r"items", ItemViewSet, basename="evento-items")

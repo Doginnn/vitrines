@@ -11,12 +11,19 @@ class Evento(models.Model):
 
 
 class Item(models.Model):
-    evento = models.ForeignKey(Evento, on_delete=models.CASCADE)
     hotel_name = models.CharField(max_length=100, verbose_name='Nome do Hotel')
     slug = models.SlugField(verbose_name='Apelido do hotel')
     image = models.URLField(verbose_name='Imagem')
     price = models.IntegerField(verbose_name='Valor R$')
-    city = models.ManyToManyField("City")
+    evento = models.ForeignKey(Evento, null=True, blank=True, on_delete=models.CASCADE)
+    category = models.ForeignKey("Category", null=True, blank=True, on_delete=models.CASCADE, help_text='TESTE AQUI CLASSE ITEM')
+    city = models.ForeignKey("City", null=True, blank=True, on_delete=models.CASCADE)
+    country = models.ForeignKey("Country", null=True, blank=True, on_delete=models.CASCADE)
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=50, verbose_name='Nome da categoria', help_text='TESTE CLASS CATEGORY')
+    slug = models.SlugField(verbose_name='Apelido da categoria')
 
 
 class City(models.Model):
@@ -25,12 +32,6 @@ class City(models.Model):
     state = models.CharField(max_length=50, verbose_name='Abreviação do estado')
 
 
-# class Country(models.Model):
-#     name = models.CharField(max_length=50, verbose_name='Nome do país')
-#     slug = models.SlugField(verbose_name='Apelido do país')
-#     city = models.ForeignKey(City, on_delete=models.CASCADE)
-
-
-# class Category(models.Model):
-#     name = models.CharField(max_length=50, verbose_name='Nome da categoria')
-#     slug = models.SlugField(verbose_name='Apelido da categoria')
+class Country(models.Model):
+    name = models.CharField(max_length=50, verbose_name='Nome do país')
+    slug = models.SlugField(verbose_name='Apelido do país')

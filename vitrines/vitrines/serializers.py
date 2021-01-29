@@ -36,3 +36,9 @@ class DestinoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item
         fields = '__all__'
+
+
+class SobreSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Item
+        exclude = '__all__'

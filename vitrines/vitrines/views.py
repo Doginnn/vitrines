@@ -30,3 +30,8 @@ class CategoryViewSet(viewsets.ModelViewSet):
 class DestinoViewSet(viewsets.ModelViewSet):
     serializer_class = ItemSerializer
     queryset = Item.objects.filter()
+
+
+class SobreViewSet(viewsets.ModelViewSet):
+    serializer_class = ItemSerializer
+    queryset = Item.objects.all()

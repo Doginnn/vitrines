@@ -13,6 +13,7 @@ api_router.register(r'category', CategoryViewSet)
 # End Points solicitados pela SBTur
 api_router.register(r'vitrines', ItemViewSet)
 api_router.register(r'destinos', DestinoViewSet)
+api_router.register(r'sobre', SobreViewSet)
 
 # End Points from REST_FRAMEWORK_NESTED
 eventos_router = routers.NestedDefaultRouter(api_router, r"eventos", lookup='evento')
@@ -24,6 +25,7 @@ urlpatterns = [
     path('', include(api_router.urls)),
     path('vitrines/', include(api_router.urls)),
     path('destinos/', include(api_router.urls)),
+    path('sobre/', include(api_router.urls)),
     path('eventos', include(api_router.urls)),
     path('city/', include(api_router.urls)),
     path('country/', include(api_router.urls)),

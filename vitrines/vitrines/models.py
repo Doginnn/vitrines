@@ -11,14 +11,14 @@ class Evento(models.Model):
 
 
 class Item(models.Model):
-    hotel_name = models.CharField(max_length=100, verbose_name='Nome do Hotel')
-    slug = models.SlugField(verbose_name='Slug do hotel')
-    image = models.URLField(verbose_name='Imagem')
-    price = models.IntegerField(verbose_name='Valor R$')
     evento = models.ForeignKey(Evento, null=True, blank=True, on_delete=models.CASCADE)
     category = models.ForeignKey("Category", null=True, blank=True, on_delete=models.CASCADE)
     city = models.ForeignKey("City", null=True, blank=True, on_delete=models.CASCADE)
     country = models.ForeignKey("Country", null=True, blank=True, on_delete=models.CASCADE)
+    hotel_name = models.CharField(max_length=100, verbose_name='Nome do Hotel')
+    slug = models.SlugField(verbose_name='Slug do hotel')
+    image = models.URLField(verbose_name='Imagem')
+    price = models.IntegerField(verbose_name='Valor R$')
 
 
 class Category(models.Model):
